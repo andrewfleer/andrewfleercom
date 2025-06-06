@@ -5,6 +5,9 @@
 :root {
   --background: #93dafe;
   --foreground: #192c76;
+  --scrollbar-track: #93dafe;
+  --scrollbar-thumb: #6a0dad;
+  --scrollbar-thumb-hover: #ff1493;
 }
 
 @theme inline {
@@ -25,4 +28,34 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Custom Scrollbar Styles */
+::-webkit-scrollbar {
+  width: 24px;
+  height: 24px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+  border: 3px solid #4a0a8d;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border: 3px solid #4a0a8d;
+  border-radius: 6px;
+  box-shadow: 6px 6px 0px 0px #4a0a8d;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-thumb-hover);
+  box-shadow: 3px 3px 0px 0px #4a0a8d;
+}
+
+/* Firefox scrollbar styles */
+* {
+  scrollbar-width: auto;
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
 }
