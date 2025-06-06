@@ -16,5 +16,9 @@ module.exports = {
   },
   plugins: [
     require('@tailwindcss/typography'),
+    function({ addVariant }) {
+      // Only apply hover effects to buttons and links
+      addVariant('hover', '&:is(button, a):hover');
+    },
   ],
 } 
